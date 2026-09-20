@@ -97,3 +97,48 @@ modal.addEventListener('click',e=>{if(e.target===modal)closeBuy()}); infoModal.a
 </script>
 </body>
 </html>
+<section id="inscription" style="padding:40px 20px; text-align:center;">
+  <h2>Inscription</h2>
+  <p>Inscris-toi pour accéder à ta formation.</p>
+
+  <form onsubmit="return envoyerInscription()" style="max-width:500px;margin:auto;">
+    <input id="nom" type="text" placeholder="Nom et prénom" required
+      style="width:100%;padding:14px;margin:8px 0;">
+
+    <input id="whatsapp" type="tel" placeholder="Numéro WhatsApp" required
+      style="width:100%;padding:14px;margin:8px 0;">
+
+    <select id="formation" required
+      style="width:100%;padding:14px;margin:8px 0;">
+      <option value="">Choisir une formation</option>
+      <option value="Statistique Football - 15000 FCFA">Statistique Football - 15 000 FCFA</option>
+      <option value="Analyse de match - 15000 FCFA">Analyse de match - 15 000 FCFA</option>
+      <option value="Marché et probabilité - 12000 FCFA">Marché et probabilité - 12 000 FCFA</option>
+      <option value="Offre Premium - 25000 FCFA">Offre Premium - 25 000 FCFA</option>
+    </select>
+
+    <button type="submit"
+      style="padding:14px 25px;margin-top:15px;cursor:pointer;">
+      Valider mon inscription
+    </button>
+  </form>
+</section>
+
+<script>
+function envoyerInscription() {
+  const nom = document.getElementById("nom").value;
+  const whatsapp = document.getElementById("whatsapp").value;
+  const formation = document.getElementById("formation").value;
+
+  const message =
+    "Bonjour, je souhaite m'inscrire.%0A%0A" +
+    "Nom : " + encodeURIComponent(nom) + "%0A" +
+    "WhatsApp : " + encodeURIComponent(whatsapp) + "%0A" +
+    "Formation : " + encodeURIComponent(formation);
+
+  window.location.href =
+    "https://wa.me/2250777770557?text=" + message;
+
+  return false;
+}
+</script>

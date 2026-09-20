@@ -92,7 +92,8 @@ footer{border-top:1px solid var(--border);padding:45px 0;color:var(--muted)}.foo
 const infoModal=document.getElementById('infoModal'); const modal=document.getElementById('buyModal'); function showInfo(t,x){document.getElementById('infoTitle').textContent=t;document.getElementById('infoText').textContent=x;infoModal.classList.add('show')} function closeInfo(){infoModal.classList.remove('show')}
 function openBuy(title,price){document.getElementById('buyTitle').textContent=title;document.getElementById('buyPrice').textContent=price;document.getElementById('paymentMsg').textContent='';modal.classList.add('show')}
 function closeBuy(){modal.classList.remove('show')}
-function demoPay(method){window.location.href = "https://pay.jeko.africa/pl/1e78311a-d831-4539-9d56-e8f5a5370fab";}
+function demoPay(method){window.location.href =
+    "https://pay.jeko.africa/pl/1e78311a-d831-4539-9d56-e8f5a5370fab";}
 modal.addEventListener('click',e=>{if(e.target===modal)closeBuy()}); infoModal.addEventListener('click',e=>{if(e.target===infoModal)closeInfo()});
 </script>
 </body>
